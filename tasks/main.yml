@@ -1,0 +1,7 @@
+---
+- name: Clone cheat repo
+  git: repo=https://github.com/chrisallenlane/cheat.git dest=~/opt/cheat
+
+- name: Run setup
+  shell: chdir=~/opt/cheat python setup.py install
+  sudo: yes

@@ -1,4 +1,13 @@
 ---
+
+- name: Install dependencies with pip
+  pip: name={{item}}
+  with_items:
+    - docopt
+
+- name: Install dependencies with apt.
+  apt: pkg=python-pygments state=present
+
 - name: Clone cheat repo
   git: repo=https://github.com/chrisallenlane/cheat.git dest=~/opt/cheat
 
